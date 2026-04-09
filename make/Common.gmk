@@ -133,7 +133,7 @@ else
 endif
 
 ifeq ($(PLATFORM_OS), macosx)
-  PLATFORM := $(PLATFORM_CPU)_mac
+  PLATFORM := $(PLATFORM_CPU)_macos
 else
   PLATFORM := $(PLATFORM_CPU)_$(PLATFORM_OS)
 endif
