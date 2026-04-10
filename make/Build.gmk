@@ -74,6 +74,8 @@ else
   LIBCLANG_COPY_PATH := "*clang.*"
 endif
 
+MODULE_VERSION := 25+1-semeru-$(shell git rev-parse --short HEAD)
+
 $(BUILD_MODULES_DIR): $(BUILD_CLASSES_DIR)
 	$(MKDIR) -p $(BUILD_MODULES_DIR)
 	$(MKDIR) -p $(JEXTRACT_JMOD_LIBS_DIR)
@@ -92,7 +94,7 @@ $(BUILD_MODULES_DIR): $(BUILD_CLASSES_DIR)
 	# create jextract jmod file
 	$(FIXPATH) $(PANAMA_JAVA_HOME)/bin/jmod \
 	    create \
-	    --module-version=25 \
+	    --module-version=$(MODULE_VERSION) \
 	    --class-path=$(BUILD_CLASSES_DIR)/org.openjdk.jextract \
 	    --libs=$(JEXTRACT_JMOD_LIBS_DIR) \
 	    --conf=$(JEXTRACT_JMOD_CONF_DIR) \
