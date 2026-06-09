@@ -74,7 +74,7 @@ else
   LIBCLANG_COPY_PATH := "*clang.*"
 endif
 
-MODULE_VERSION := 25+1-semeru-$(shell git rev-parse --short HEAD)
+MODULE_VERSION := 25+2-semeru-$(shell git rev-parse --short HEAD)
 
 $(BUILD_MODULES_DIR): $(BUILD_CLASSES_DIR)
 	$(MKDIR) -p $(BUILD_MODULES_DIR)
